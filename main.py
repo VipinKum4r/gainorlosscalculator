@@ -12,13 +12,14 @@ def index():
             result = f"{percent_change:.2f}% gain"
         else:
             result = f"{percent_change:.2f}% loss"
-        return render_template('result.html', result=result)
+        return render_template('index.html', result=result)
     else:
         return render_template('index.html')
 
 @app.route('/result')
 def result():
-    return render_template('result.html')
+    return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0',debug=True)
+
